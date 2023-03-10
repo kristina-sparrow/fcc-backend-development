@@ -1,3 +1,3 @@
 # Timestamp Microservice
 
-[Instructions](https://www.freecodecamp.org/learn/apis-and-microservices/apis-and-microservices-projects/timestamp-microservice)
+[Live Link](https://replit.com/@kristinasparrow/timestamp-microservice) :point_left:
