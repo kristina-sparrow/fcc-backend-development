@@ -1,3 +1,3 @@
 # Timestamp Microservice
 
-[Live Link](https://replit.com/@kristinasparrow/timestamp-microservice) :point_left:
+[Live Link](https://timestamp-microservice.kristinasparrow.repl.co/) :point_left:
