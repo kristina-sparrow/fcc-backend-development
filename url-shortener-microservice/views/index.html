@@ -1,32 +1,39 @@
 <!DOCTYPE html>
-
 <html>
   <head>
-    <title>URL Shortener Microservice | freeCodeCamp.org</title>
-    <link
-      rel="icon"
-      type="image/png"
-      href="https://cdn.freecodecamp.org/universal/favicons/favicon-16x16.png"
-    />
+    <title>URL Shortener Microservice</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <script
+    src="https://kit.fontawesome.com/0f70dd3e5b.js"
+    crossorigin="anonymous"
+  ></script>
     <link href="/public/style.css" rel="stylesheet" type="text/css" />
   </head>
-
   <body>
     <h1>URL Shortener Microservice</h1>
-    <main>
-      <section>
-        <form action="api/shorturl" method="POST">
-          <fieldset>
-            <legend>URL Shortener</legend>
-            <label for="url_input">URL:</label>
-            <input id="url_input" type="text" name="url" placeholder="https://www.freecodecamp.org/" />
-            <input type="submit" value="POST URL" />
-          </fieldset>
-        </form>
-      </section>
-    </main>
-    <footer>
-      <p>By <a href="https://www.freecodecamp.org/">freeCodeCamp</a></p>
+    <hr />
+    <div class="container">
+      <form action="api/shorturl" method="POST">
+        <input id="url_input" type="text" name="url" placeholder="Enter a URL..." />
+        <input type="submit" value="POST URL" />
+      </form>
+      <div class="example-usage">
+        <h2>Example Usage:</h2>
+        <a href="https://url-shortener-microservice.kristinasparrow.repl.co/api/shorturl/1">
+          [this_project_url]/api/shorturl/1
+        </a>
+        <p>Will Redirect to: https://forum.freecodecamp.org/</p>
+      </div>
+    </div>
+    <footer class="footer">
+      <p>Built by Kristina Sparrow</p>
+      <a
+        href="https://github.com/kristina-sparrow"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="fa-brands fa-github"></i>
+      </a>
     </footer>
   </body>
 </html>
