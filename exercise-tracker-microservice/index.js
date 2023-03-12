@@ -52,18 +52,23 @@ app.get('/api/users/:id/logs', async (req, res) => {
     const user = await User.findById(id)
     if (!user) return res.status(404).json(ERROR)
 
-    let log = user.exercises.filter(exercise =>
-      new Date(exercise.date).getTime() > dateFrom.getTime()
-      && new Date(exercise.date).getTime() < dateTo.getTime()
-    )
+    let log = user.exercises;
+
+    if (req.query.from) {
+      log = log.filter(exercise => new Date(exercise.date).getTime() >= dateFrom.getTime());
+    }
+    if (req.query.to) {
+      log = log.filter(exercise => new Date(exercise.date).getTime() <= dateTo.getTime());
+    }
+    if (req.query.limit) {
+      log = log.slice(0, limit);
+    }
 
     log = log.map(exercise => ({
       description: exercise.description,
       duration: exercise.duration,
-      date: new Date(exercise.date).toDateString()
-    }))
-
-    if (limit) log = log.slice(0, limit)
+      date: new Date(exercise.date).toDateString(),
+    }));
 
     res.json({
       _id: user._id,
@@ -93,7 +98,7 @@ app.post('/api/users/:id/exercises', async (req, res) => {
 
   const newExercise = {
     description: description,
-    duration: duration,
+    duration: Number(duration),
     date: date ? new Date(date).toDateString() : new Date().toDateString()
   };
 
@@ -104,15 +109,14 @@ app.post('/api/users/:id/exercises', async (req, res) => {
     user.exercises.push(newExercise);
     await user.save()
 
-    const response = {
+    res.json({
+      _id: user._id,
       username: user.username,
       description: newExercise.description,
       duration: newExercise.duration,
-      date: new Date(newExercise.date).toDateString(),
-      _id: user._id
-    };
+      date: newExercise.date
+    })
 
-    res.json(response)
   } catch (error) {
     res.status(500).json(ERROR)
   }
