@@ -12,7 +12,7 @@ app.get('/', function (req, res) {
   res.sendFile(process.cwd() + '/views/index.html');
 });
 
-app.post('/api/fileanalyze', multer().single('upfile'), (req, res) => {
+app.post('/api/fileanalyse', multer().single('upfile'), (req, res) => {
   res.json({
       name: req.file.originalname,
       type: req.file.mimetype,
