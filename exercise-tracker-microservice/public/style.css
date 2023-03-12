@@ -3,15 +3,72 @@
 }
 
 body {
-  font-family:sans-serif;
-  margin: 25px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
   color: #222;
   background-color: #f5f5f5;
+  text-align: center;
+  line-height: 1.4em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
 }
 
-h1 {
-  font-weight: bold;
-  
+h1, h2 {
+  font-weight: 500;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+hr {
+  width: 90%;
+  margin-top: -15px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.forms-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 30px;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.details-container p {
+  margin: 0;
+}
+
+.details-container code {
+  margin: 0;
 }
 
 p {
@@ -19,41 +76,69 @@ p {
 }
 
 form {
-  margin-bottom: 25px;
   padding: 15px;
-  background-color: #87D37C;
+  background-color: #d2e3f0;
   display: inline-block;
   width: 100%;
+  min-width: max-content;
   max-width: 340px;
-  border-radius: 5px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.input-group {
+  align-self: auto;
 }
 
 input {
   display: block;
-  margin-bottom: 10px;
-  padding: 5px;
+  border: none;
+  margin-bottom: 8px;
+  padding: 8px 5px;
   width: 100%;
-  border: 1px solid lightgrey;
-  border-radius: 3px;
-  font-size: 16px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: inherit;
 }
 
 input[type=submit] {
-  font-size: 16px;
-  border-radius: 3px;
-  background-color: #E4F1FE;
-  border: 1px solid grey;
-  box-shadow: 2px 2px #999;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: inherit;
+  background-color: rgb(24, 84, 140);
+  color: white;
   cursor: pointer;
 }
 
 input[type=submit]:hover {
-  background-color: #FFFEC4;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 3px 0 hsl(0 0% 0% / 0.1);
 }
 
 code {
   font-family: monospace;
-  font-size: 1.2em;
-  background-color: #FFFEC4;
-  padding: 2px;
+  padding: 5px;
+  color: green;
+  align-self: flex-start;
+  text-align: left;
+}
+
+
+strong {
+  font-weight: 700;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  color: #222;
+}
+  
+.footer i {
+  color: #222;
+  font-size: 1.1rem;
 }
