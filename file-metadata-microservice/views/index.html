@@ -1,34 +1,37 @@
 <!DOCTYPE html>
-
 <html>
    <head>
       <title>File Metadata</title>
-      <link rel="shortcut icon" href="https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.png" type="image/x-icon"/>
-      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+      <script
+      src="https://kit.fontawesome.com/0f70dd3e5b.js"
+      crossorigin="anonymous"
+    ></script>
       <link href="/public/style.css" rel="stylesheet" type="text/css">
    </head>
-
    <body>
-      <div class="container">
-        <h2>API Project: File Metadata Microservice</h2>
-
-        <h3>Usage:</h3>
-        <p>
-          Please Upload a File ...
-        </p>
-        <div class="view">
-          <h4 id="output"></h4>
-          <form enctype="multipart/form-data" method="POST" action="/api/fileanalyse">
-            <input id="inputfield" type="file" name="upfile">
-            <input id="button" type="submit" value="Upload">
-          </form>
-        </div>
+    <h1>File Metadata Microservice</h1>
+    <hr />
+    <div class="container">
+      <p>Please Upload a File...</p>
+      <div class="view">
+        <form enctype="multipart/form-data" method="POST" action="/api/fileanalyze">
+          <input id="inputfield" type="file" name="upfile">
+          <input id="submit-button" type="submit" value="Upload">
+        </form>
       </div>
-      <div class="footer">
-        <p>
-          by 
-          <a href="http://www.freecodecamp.com">freeCodeCamp</a>
-        </p>
-      </div>
+    </div>
+    <footer class="footer">
+      <p>Built by Kristina Sparrow</p>
+      <a
+        href="https://github.com/kristina-sparrow"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="fa-brands fa-github"></i>
+      </a>
+    </footer>
    </body>
 </html>
